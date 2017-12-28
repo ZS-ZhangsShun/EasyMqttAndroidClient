@@ -1,6 +1,16 @@
 # EasyMqttAndroidClient
  Make the Mqtt Android client easier
 
+## 使用
+### 第一步：在project的build.gradle 文件中添加JitPack依赖
+
+allprojects {
+    repositories {
+       ...
+       maven { url 'https://jitpack.io' }
+    }
+}
+
 ## 简介
 
 基于第三方开源框架Mqtt Android客户端封装的用于接收、发布推送消息的组件。
