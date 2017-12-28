@@ -3,7 +3,7 @@
 
 ## 使用
 ### 第一步：在project的build.gradle 文件中添加JitPack依赖
-
+···java
 allprojects {
     repositories {
        ...
