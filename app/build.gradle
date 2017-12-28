@@ -22,7 +22,5 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:24.1.1'
-    compile project(':easyMqttLibrary')
-    compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
-    compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+    compile 'com.github.ZS-ZhangsShun:EasyMqttAndroidClient:1.0'
 }
