@@ -1,28 +1,28 @@
-# EasyMqttAndroidClient
+#EasyMqttAndroidClient
  Make the Mqtt Android client easier
 
-## 简介
+##简介
 
 基于第三方开源框架Mqtt Android客户端封装的用于接收、发布推送消息的组件。
 
-## 功能
+##功能
 1.支持消息的订阅与发布
 2.支持服务器的连接与断开
 3.支持连接状态的判断
 4.支自动重连、清楚session、心跳间隔、超时时间等配置
 
-## 外部关系
+##外部关系
 
 依赖第三方框架
 compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
 compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 
 
-## 使用方法
+##使用方法
 
 
 
-### 第一步：在Module的build.gradle文件中的dependencies标签下添加依赖库配置如下：
+###第一步：在Module的build.gradle文件中的dependencies标签下添加依赖库配置如下：
 
 
 dependencies {
@@ -30,9 +30,9 @@ dependencies {
     compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 }
 
-### 第二步：开始使用 有以下方法可使用 详情参看demo中 MainActivity的示例代码
+###第二步：开始使用 有以下方法可使用 详情参看demo中 MainActivity的示例代码
 
-#### （1）构建MqttService对象
+####（1）构建MqttService对象
 
     /**
      * 构建EasyMqttService对象
@@ -53,7 +53,7 @@ dependencies {
                 .bulid(this.getApplicationContext());
     }
 
-#### （2）连接Mqtt服务器
+####（2）连接Mqtt服务器
 
     /**
      * 连接Mqtt服务器
@@ -87,7 +87,7 @@ dependencies {
         });
     }
 
-#### （3）订阅主题
+####（3）订阅主题
 
     /**
      * 订阅主题 这里订阅三个主题分别是"a", "b", "c"
@@ -102,7 +102,7 @@ dependencies {
         mqttService.subscribe(topics, qoss);
     }
 
-#### （4）关闭连接
+####（4）关闭连接
 
     /**
      * 关闭连接
@@ -112,7 +112,7 @@ dependencies {
     }
 
 
-#### （5）断开连接
+####（5）断开连接
 
     /**
      * 断开连接
@@ -121,7 +121,7 @@ dependencies {
         mqttService.disconnect();
     }
 
-#### （6）判断连接状态
+####（6）判断连接状态
 
     /**
      * 判断服务是否连接
@@ -130,7 +130,7 @@ dependencies {
         return mqttService.isConnected();
     }
 
-#### （7）发布消息
+####（7）发布消息
 
     /**
      * 发布消息
