@@ -1,23 +1,6 @@
 # EasyMqttAndroidClient
  Make the Mqtt Android client easier
 
-## 使用
-### 第一步：在project的build.gradle 文件中添加JitPack依赖
-
-allprojects {
-    repositories {
-        ...
-        maven { url 'https://jitpack.io' }
-    }
-}
-
-### 第二步: 在Module的build.gradle文件中添加对本库的依赖
-
-dependencies {
-    ...
-    compile 'com.github.ZS-ZhangsShun:EasyMqttAndroidClient:1.0'
-}
-
 ## 简介
 
 基于第三方开源框架Mqtt Android客户端封装的用于接收、发布推送消息的组件。
@@ -38,18 +21,24 @@ dependencies {
 
 ## 使用方法
 
+### 第一步：在project的build.gradle 文件中添加JitPack依赖
+
+    allprojects {
+        repositories {
+            ...
+            maven { url 'https://jitpack.io' }
+        }
+    }
+
+### 第二步: 在Module的build.gradle文件中添加对本库的依赖
+
+    dependencies {
+        ...
+        compile 'com.github.ZS-ZhangsShun:EasyMqttAndroidClient:1.0'
+    }
 
 
-### 第一步：在Module的build.gradle文件中的dependencies标签下添加依赖库配置如下：
-
-
-dependencies {
-
-    compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
-    compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
-}
-
-### 第二步：开始使用 有以下方法可使用 详情参看demo中 MainActivity的示例代码
+### 第三步：开始使用 有以下方法可使用 详情参看demo中 MainActivity的示例代码
 
 #### （1）构建MqttService对象
 
