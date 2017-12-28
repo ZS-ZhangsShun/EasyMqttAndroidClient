@@ -1,6 +1,9 @@
 # EasyMqttAndroidClient
  Make the Mqtt Android client easier
 
+## 使用
+### 第一步：在project的build.gradle 文件中添加JitPack依赖
+
 ## 简介
 
 基于第三方开源框架Mqtt Android客户端封装的用于接收、发布推送消息的组件。
@@ -14,8 +17,9 @@
 ## 外部关系
 
 依赖第三方框架
-compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
-compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+
+ compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'<br>
+ compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 
 
 ## 使用方法
@@ -26,7 +30,8 @@ compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 
 
 dependencies {
-	compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
+
+    compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
     compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 }
 
