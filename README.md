@@ -11,14 +11,6 @@
 3.支持连接状态的判断<br>
 4.支自动重连、清楚session、心跳间隔、超时时间等配置
 
-## 外部关系
-
-依赖第三方框架
-
-    compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
-    compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
-
-
 ## 使用方法
 
 ### 第一步：在project的build.gradle 文件中添加JitPack依赖
