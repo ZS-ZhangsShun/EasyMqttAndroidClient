@@ -28,7 +28,6 @@ compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 dependencies {
 	compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
     compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
-
 }
 
 ### 第二步：开始使用 有以下方法可使用 详情参看demo中 MainActivity的示例代码
