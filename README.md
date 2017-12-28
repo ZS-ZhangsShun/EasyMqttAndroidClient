@@ -15,7 +15,7 @@
 
 依赖第三方框架
 
-    compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'<br>
+    compile 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
     compile 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 
 
