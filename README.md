@@ -30,7 +30,7 @@
     }
 
 
-### 第三步：开始使用 以下方法可直接拷贝到项目中使用 参数根据实际情况修改即可 详情参考demo中 MainActivity的示例代码
+### 第三步：开始使用（6.0及以上版本需要在代码中动态申请Manifest.permission.READ_PHONE_STATE权限 参考示例代码） 以下方法可直接拷贝到项目中使用 参数根据实际情况修改即可 详情参考demo中 MainActivity的示例代码
 
 #### （1）构建MqttService对象
 
