@@ -1,7 +1,9 @@
 package com.zs.easy.mqtt.demo;
 
+import android.Manifest;
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 
 import com.zs.easy.mqtt.EasyMqttService;
 import com.zs.easy.mqtt.IEasyMqttCallBack;
@@ -15,11 +17,18 @@ import org.eclipse.paho.client.mqttv3.IMqttToken;
 public class MainActivity extends Activity {
 
     private EasyMqttService mqttService;
+    /**
+     * 回调时使用
+     */
+    private final int MY_PERMISSIONS_REQUEST_READ_PHONE_STATE = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.READ_PHONE_STATE},
+                MY_PERMISSIONS_REQUEST_READ_PHONE_STATE);
 
         buildEasyMqttService();
 
