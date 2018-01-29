@@ -2,6 +2,7 @@ package com.zs.easy.mqtt.demo;
 
 import android.Manifest;
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 
@@ -26,10 +27,11 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ActivityCompat.requestPermissions(this,
-                new String[]{Manifest.permission.READ_PHONE_STATE},
-                MY_PERMISSIONS_REQUEST_READ_PHONE_STATE);
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.READ_PHONE_STATE},
+                    MY_PERMISSIONS_REQUEST_READ_PHONE_STATE);
+        }
         buildEasyMqttService();
 
         connect();
