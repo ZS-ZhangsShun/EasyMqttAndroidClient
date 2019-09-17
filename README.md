@@ -78,6 +78,7 @@
             @Override
             public void connectSuccess(IMqttToken arg0) {
                 //连接成功
+                //建议在这里执行订阅逻辑
             }
 
             @Override
