@@ -37,10 +37,6 @@ public class MainActivity extends Activity {
         connect();
 
         if (isConnected()) {
-            subscribe();
-        }
-
-        if (isConnected()) {
             //消息内容
             String msg = "test";
             //消息主题
@@ -122,7 +118,8 @@ public class MainActivity extends Activity {
 
             @Override
             public void connectSuccess(IMqttToken arg0) {
-                //连接成功
+                //连接成功 订阅一次即可 订阅状态可以保存到sp 这里简单处理了
+                subscribe();
             }
 
             @Override
