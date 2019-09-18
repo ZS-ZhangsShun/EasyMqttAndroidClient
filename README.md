@@ -26,7 +26,7 @@
 
     dependencies {
         ...
-        compile 'com.github.ZS-ZhangsShun:EasyMqttAndroidClient:1.0'
+        compile 'com.github.ZS-ZhangsShun:EasyMqttAndroidClient:1.0.2'
     }
 
 
@@ -78,6 +78,8 @@
             @Override
             public void connectSuccess(IMqttToken arg0) {
                 //连接成功
+                //建议在这里执行订阅逻辑
+                //如果cleanSession设置为false的话，不用每次启动app都订阅，第一次订阅后 后面只执行连接操作即可
             }
 
             @Override
