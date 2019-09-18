@@ -163,6 +163,7 @@ public class EasyMqttService {
      */
     public void close() {
         try {
+            client.unregisterResources();
             client.close();
         } catch (Exception e) {
             Log.e(TAG,e.toString());
