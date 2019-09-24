@@ -26,7 +26,7 @@
 
     dependencies {
         ...
-        compile 'com.github.ZS-ZhangsShun:EasyMqttAndroidClient:1.0.3'
+        compile 'com.github.ZS-ZhangsShun:EasyMqttAndroidClient:1.0.4'
     }
 
 
