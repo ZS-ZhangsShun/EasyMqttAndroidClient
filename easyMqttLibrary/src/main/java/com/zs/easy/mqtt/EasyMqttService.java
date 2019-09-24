@@ -15,6 +15,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 /**
  * Mqtt服务
+ *
  * @author zhangshun
  */
 public class EasyMqttService {
@@ -125,6 +126,7 @@ public class EasyMqttService {
 
     /**
      * 发布消息
+     *
      * @param msg
      * @param topic
      * @param qos
@@ -137,6 +139,16 @@ public class EasyMqttService {
             e.printStackTrace();
         }
     }
+
+    /**
+     * 获取mqtt客户端
+     *
+     * @return
+     */
+    public MqttAndroidClient getMqttClient() {
+        return client;
+    }
+
 
     private void init() {
         // 服务器地址（协议+地址+端口号）
@@ -166,7 +178,7 @@ public class EasyMqttService {
             client.unregisterResources();
             client.close();
         } catch (Exception e) {
-            Log.e(TAG,e.toString());
+            Log.e(TAG, e.toString());
         }
     }
 
@@ -177,7 +189,7 @@ public class EasyMqttService {
         this.starMQTTCallBack = starMQTTCallBack;
         if (canDoConnect && !client.isConnected()) {
             try {
-                client.connect(conOpt,null, iMqttActionListener);
+                client.connect(conOpt, null, iMqttActionListener);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -196,35 +208,135 @@ public class EasyMqttService {
             Log.i(TAG, "execute subscribe -- qos = " + qos.toString());
             client.subscribe(topics, qos);
         } catch (Exception e) {
-            Log.e(TAG,e.toString());
+            Log.e(TAG, e.toString());
+        }
+    }
+
+    /**
+     * 订阅主题
+     *
+     * @param topic 主题
+     * @param qos   策略
+     */
+    public void subscribe(String topic, int qos) {
+        try {
+            // 订阅topic话题
+            Log.i(TAG, "execute subscribe -- topic = " + topic + "qos = " + qos);
+            client.subscribe(topic, qos);
+        } catch (Exception e) {
+            Log.e(TAG, e.toString());
+        }
+    }
+
+    /**
+     * 订阅主题
+     *
+     * @param topic 主题
+     * @param qos   策略
+     */
+    public void subscribe(String topic, int qos, Object userContext, IMqttActionListener listener) {
+        try {
+            // 订阅topic话题
+            Log.i(TAG, "execute subscribe -- topic = " + topic + "qos = " + qos);
+            client.subscribe(topic, qos, userContext, listener);
+        } catch (Exception e) {
+            Log.e(TAG, e.toString());
+        }
+    }
+
+    /**
+     * 订阅主题
+     *
+     * @param topics 主题
+     * @param qos    策略
+     */
+    public void subscribe(String[] topics, int[] qos, Object userContext, IMqttActionListener listener) {
+        try {
+            // 订阅topic话题
+            client.subscribe(topics, qos, userContext, listener);
+        } catch (Exception e) {
+            Log.e(TAG, e.toString());
+        }
+    }
+
+    /**
+     * 解除订阅
+     *
+     * @param topic 主题
+     */
+    public void unsubscribe(String topic) {
+        try {
+            // 订阅topic话题
+            Log.i(TAG, "execute unsubscribe -- topic = " + topic);
+            client.unsubscribe(topic);
+        } catch (Exception e) {
+            Log.e(TAG, e.toString());
+        }
+    }
+
+    /**
+     * 解除订阅
+     *
+     * @param topics 主题
+     */
+    public void unsubscribe(String[] topics) {
+        try {
+            // 订阅topic话题
+            client.unsubscribe(topics);
+        } catch (Exception e) {
+            Log.e(TAG, e.toString());
+        }
+    }
+
+    /**
+     * 解除订阅
+     */
+    public void unsubscribe(String[] topics, Object userContext, IMqttActionListener listener) {
+        try {
+            // 订阅topic话题
+            client.unsubscribe(topics, userContext, listener);
+        } catch (Exception e) {
+            Log.e(TAG, e.toString());
+        }
+    }
+
+    /**
+     * 解除订阅
+     */
+    public void unsubscribe(String topic, Object userContext, IMqttActionListener listener) {
+        try {
+            // 订阅topic话题
+            client.unsubscribe(topic, userContext, listener);
+        } catch (Exception e) {
+            Log.e(TAG, e.toString());
         }
     }
 
     /**
      * 断开连接
      */
-    public void disconnect(){
+    public void disconnect() {
         try {
             client.disconnect();
         } catch (Exception e) {
-            Log.e(TAG,e.toString());
+            Log.e(TAG, e.toString());
         }
     }
 
     /**
      * 判断连接是否断开
      */
-    public boolean isConnected(){
+    public boolean isConnected() {
         try {
             return client.isConnected();
         } catch (Exception e) {
-            Log.e(TAG,e.toString());
+            Log.e(TAG, e.toString());
         }
         return false;
     }
 
     /**
-     *  MQTT是否连接成功
+     * MQTT是否连接成功
      */
     private IMqttActionListener iMqttActionListener = new IMqttActionListener() {
 
