@@ -140,3 +140,21 @@
     private void publish(String msg, String topic, int qos, boolean retained) {
         mqttService.publish(msg, topic, qos, retained);
     }
+
+#### （8）解除订阅
+
+    /**
+     * 解除订阅
+     */
+    private void unsubscribe(String[] topics) {
+        mqttService.unsubscribe(topics);
+    }
+
+#### （9）获取MqttClient 如果提供的方法不够 可以自己获取client 自定义扩展方法
+
+    /**
+     * 获取MqttClient
+     */
+    private MqttAndroidClient getMqttClient() {
+        mqttService.getMqttClient();
+    }
